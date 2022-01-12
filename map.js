@@ -72,27 +72,17 @@ function sortList(arr) {
 };
 
 // const studentsWithIds2 = students.map(student => [{id: student.id, name: student.name}]);
-const studentsWithIds3 = students.map(student => sortList(student));
-// const studentsWithIds4 = students.map(student => {[{id: student.id, name: student.name}]});
+// const studentsWithIds3 = students.map(student => sortList(student));
+const studentsWithIds4 = students.map((array) => {
+  return {id: array.id, name: array.name}
+   
+});
 
 // console.log(studentsWithIds2);
-console.log(studentsWithIds3);
-// console.log(studentsWithIds4);
+// console.log(studentsWithIds3);
+console.log(studentsWithIds4);
 
 const ages = [32, 26, 28];
-// var ages = [
-//   {
-//     age: 32,
-//   },
-//   {
-//     age: 26,
-//   },
-//   {
-//     age: 28,
-//   }
-// ]
-
-
 
 // let agesIncluded = students.map(item => [{...item, age:ages[]}])
 
@@ -104,12 +94,12 @@ const ages = [32, 26, 28];
 //   }
 // );
 
-
-let agesIncluded = students.map((array, index, age) => { 
-  
-  return {...array, age: age[index]};
+let agesIncluded = students.map((array, index) => { 
+  return {...array, age: ages[index]};
 });
 
 console.log(ages);
 // console.log(students);
 console.log(agesIncluded);
+
+
